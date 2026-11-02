@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta
+      name="description"
+      content="Informativa privacy di Tessere e Spese: i dati restano sul dispositivo, nessun server, nessuna pubblicità. Le foto degli scontrini vengono elaborate solo sul telefono."
+    >
+    <meta name="theme-color" content="#5b4ee6">
+    <title>Informativa privacy · Tessere e Spese</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f4f6fb;
+        --card: #ffffff;
+        --text: #18202f;
+        --muted: #5b6780;
+        --border: #e2e7f1;
+        --accent: #5b4ee6;
+        --accent-soft: #efecff;
+        --accent-text: #4537c9;
+        --shadow: 0 18px 40px rgba(24, 32, 47, 0.08);
+        --radius: 16px;
+        font-family:
+          'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial,
+          sans-serif;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0a0d14;
+          --card: #11151f;
+          --text: #e9edf7;
+          --muted: #9aa6bf;
+          --border: #232b3b;
+          --accent: #a89bff;
+          --accent-soft: #1a1e2d;
+          --accent-text: #c3baff;
+          --shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        padding: 32px 16px 56px;
+        background:
+          radial-gradient(700px 380px at 12% -10%, rgba(91, 78, 230, 0.12), transparent 65%),
+          radial-gradient(600px 320px at 100% 0%, rgba(34, 211, 238, 0.08), transparent 60%),
+          var(--bg);
+        background-attachment: fixed;
+        color: var(--text);
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .page {
+        max-width: 780px;
+        margin: 0 auto;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 40px 44px 44px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 22px;
+      }
+
+      .brand-badge {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #6d5ef7, #22d3ee);
+        color: #ffffff;
+        font-weight: 800;
+        font-size: 17px;
+        letter-spacing: -0.03em;
+        flex: 0 0 auto;
+      }
+
+      .brand-name {
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+
+      .brand-id {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+      }
+
+      h1 {
+        margin: 0 0 6px;
+        font-size: clamp(27px, 5vw, 36px);
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+      }
+
+      .meta {
+        margin: 0 0 26px;
+        font-size: 13.5px;
+        color: var(--muted);
+      }
+
+      .summary {
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--accent);
+        border-radius: 12px;
+        background: var(--accent-soft);
+        padding: 18px 20px;
+        margin: 0 0 34px;
+      }
+
+      .summary h2 {
+        margin: 0 0 8px;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent-text);
+      }
+
+      .summary ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .summary li {
+        margin: 4px 0;
+        font-size: 14.5px;
+      }
+
+      section {
+        padding-top: 24px;
+        margin-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+
+      section:first-of-type {
+        border-top: 0;
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 19px;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+      }
+
+      h2 .num {
+        color: var(--accent-text);
+        font-variant-numeric: tabular-nums;
+        margin-right: 6px;
+      }
+
+      h3 {
+        margin: 20px 0 6px;
+        font-size: 15px;
+      }
+
+      p {
+        margin: 0 0 12px;
+      }
+
+      p:last-child,
+      ul:last-child {
+        margin-bottom: 0;
+      }
+
+      ul {
+        margin: 0 0 12px;
+        padding-left: 22px;
+      }
+
+      li {
+        margin: 3px 0;
+      }
+
+      strong {
+        font-weight: 650;
+      }
+
+      a {
+        color: var(--accent-text);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+      }
+
+      a:hover {
+        text-decoration-thickness: 2px;
+      }
+
+      code {
+        font-family: 'Cascadia Code', 'SFMono-Regular', Consolas, monospace;
+        font-size: 0.88em;
+        padding: 1px 6px;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: var(--accent-soft);
+        white-space: nowrap;
+      }
+
+      .note {
+        margin: 14px 0;
+        padding: 12px 16px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--accent-soft);
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .note p {
+        margin: 0;
+      }
+
+      .contact {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px 18px;
+        background: var(--accent-soft);
+      }
+
+      .contact p {
+        margin: 0;
+        font-size: 14.5px;
+      }
+
+      footer {
+        margin-top: 26px;
+        text-align: center;
+        font-size: 12.5px;
+        color: var(--muted);
+      }
+
+      footer p {
+        margin: 4px 0;
+      }
+
+      .top {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 12.5px;
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .top:hover {
+        color: var(--accent-text);
+      }
+
+      @media (max-width: 640px) {
+        body {
+          padding: 16px 10px 32px;
+        }
+
+        .card {
+          padding: 26px 20px 30px;
+          border-radius: 14px;
+        }
+
+        .brand {
+          margin-bottom: 18px;
+        }
+
+        section {
+          padding-top: 20px;
+          margin-top: 20px;
+        }
+      }
+
+      @media print {
+        body {
+          padding: 0;
+          background: #ffffff;
+          color: #000000;
+          font-size: 11pt;
+        }
+
+        .card {
+          border: 0;
+          box-shadow: none;
+          padding: 0;
+        }
+
+        .top {
+          display: none;
+        }
+
+        a {
+          color: #000000;
+        }
+
+        section {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page" id="top">
+      <article class="card">
+        <header>
+          <div class="brand">
+            <span class="brand-badge" aria-hidden="true">TS</span>
+            <span>
+              <span class="brand-name">Tessere e Spese</span>
+              <span class="brand-id">it.diegomarinelli.fedelta</span>
+            </span>
+          </div>
+          <h1>Informativa privacy</h1>
+          <p class="meta">Versione 2 · Ultimo aggiornamento: 2 novembre 2026</p>
+        </header>
+
+        <div class="summary">
+          <h2>In breve</h2>
+          <ul>
+            <li>I tuoi dati restano <strong>solo sul tuo dispositivo</strong>.</li>
+            <li>
+              Nessun server dell'app, nessun account online, nessuna pubblicità, profilazione o
+              analisi.
+            </li>
+            <li>
+              Le foto degli scontrini vengono elaborate <strong>sul telefono</strong> e non sono
+              salvate né inviate.
+            </li>
+          </ul>
+        </div>
+
+        <section id="titolare">
+          <h2><span class="num">1.</span>Titolare del trattamento</h2>
+          <p>
+            L'app <strong>Tessere e Spese</strong> (identificativo <code>it.diegomarinelli.fedelta</code>)
+            è sviluppata da <strong>Diego Marinelli</strong>, che è il titolare del trattamento dei
+            dati descritti in questa informativa.
+          </p>
+          <p>
+            L'app non è collegata a un backend e non dispone di un'area riservata online: non esiste
+            un server dell'app a cui inviare o da cui recuperare i dati.
+          </p>
+        </section>
+
+        <section id="dati">
+          <h2><span class="num">2.</span>Quali dati tratta</h2>
+          <p>L'app tratta esclusivamente i dati che inserisci o generi tu, per il suo funzionamento:</p>
+          <ul>
+            <li>
+              <strong>Account locale:</strong> nome, indirizzo email e password. La password non è
+              mai salvata in chiaro: viene conservata solo come hash PBKDF2-SHA256 con salt
+              casuale.
+            </li>
+            <li>
+              <strong>Tessere fedeltà:</strong> negozio o nome della tessera, numero, punti,
+              scadenza, note e colore scelto.
+            </li>
+            <li>
+              <strong>Spese:</strong> importo, negozio, data, categoria, eventuali note e
+              l'indicazione che la spesa è stata registrata leggendo uno scontrino.
+            </li>
+            <li>
+              <strong>Lista della spesa:</strong> nome dei prodotti, quantità, negozio e stato
+              (da comprare o nel carrello).
+            </li>
+            <li>
+              <strong>Preferenze locali:</strong> accettazione dell'informativa, stato del tutorial e
+              impostazioni salvate dall'app sul dispositivo.
+            </li>
+          </ul>
+          <p>
+            Le <strong>immagini</strong> scattate o selezionate per leggere un codice a barre o uno
+            scontrino non rientrano tra i dati conservati: vengono analizzate in memoria e scartate
+            subito dopo la lettura.
+          </p>
+        </section>
+
+        <section id="finalita">
+          <h2><span class="num">3.</span>Finalità e base giuridica</h2>
+          <p>
+            I dati sono trattati solo per permetterti di usare l'app: gestire le tessere fedeltà,
+            tenere la lista della spesa, registrare le spese e mostrarne le statistiche, oltre a
+            proteggere l'accesso all'app con email e password.
+          </p>
+          <p>
+            Non vengono usati per marketing, pubblicità, profilazione o comunicazioni commerciali.
+            Il trattamento è necessario per fornire il servizio che richiedi e si basa sul tuo
+            consenso, espresso al primo avvio accettando questa informativa. Puoi revocarlo in
+            qualsiasi momento eliminando account e dati dall'app.
+          </p>
+        </section>
+
+        <section id="dove">
+          <h2><span class="num">4.</span>Dove restano i dati</h2>
+          <p>
+            Tutti i dati, compreso l'account, sono salvati <strong>esclusivamente nella memoria
+            locale del tuo dispositivo</strong> (il <code>localStorage</code> dell'app). Non esiste
+            un server dell'app e non viene creato alcun account online: email e password servono
+            solo a sbloccare l'app su questo telefono.
+          </p>
+          <p>
+            Di conseguenza i dati non sono accessibili allo sviluppatore né a terzi, non vengono
+            sincronizzati tra dispositivi e non sono trasferiti fuori dal tuo telefono. Se cambi
+            dispositivo, puoi spostarli solo esportando e importando un backup JSON.
+          </p>
+        </section>
+
+        <section id="fotocamera">
+          <h2><span class="num">5.</span>Fotocamera, scontrini e ML Kit</h2>
+          <p>
+            L'app chiede il permesso della fotocamera solo per due funzioni, attivate da te:
+          </p>
+          <ul>
+            <li>leggere il codice a barre di una tessera fedeltà;</li>
+            <li>
+              fotografare o caricare lo scontrino alla fine della spesa, per compilare
+              automaticamente importo, negozio e data.
+            </li>
+          </ul>
+          <p>
+            Le immagini vengono elaborate <strong>sul dispositivo</strong> tramite Google ML Kit. Il
+            testo riconosciuto viene usato solo per proporre i dati della spesa, che puoi correggere
+            prima di confermare. La foto non viene salvata nella memoria dell'app, non viene
+            caricata su Internet e non viene condivisa con lo sviluppatore.
+          </p>
+          <p>
+            Il riconoscimento del testo usa il modello Latin di ML Kit incluso nell'app e funziona
+            anche offline. Alcuni moduli di ML Kit possono essere forniti o aggiornati tramite i
+            Google Play Services: per questa componente si applica l'informativa privacy di Google
+            (<a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank"
+              >policies.google.com/privacy</a
+            >). Nessun dato dell'app viene inviato a Google.
+          </p>
+        </section>
+
+        <section id="non-facciamo">
+          <h2><span class="num">6.</span>Cosa non facciamo</h2>
+          <ul>
+            <li>Non trasmettiamo, vendiamo o condividiamo i tuoi dati con terzi.</li>
+            <li>Non usiamo pubblicità, profilazione, cookie di tracciamento o strumenti di analisi.</li>
+            <li>Non creiamo account online e non conserviamo copie dei tuoi dati su server.</li>
+            <li>Non chiediamo accesso a contatti, posizione, microfono, foto o altri dati del telefono.</li>
+          </ul>
+          <p>
+            L'app dichiara il permesso Internet perché la WebView e i moduli di Google Play Services
+            possono richiederlo, ma <strong>non invia i tuoi dati a un server dell'app</strong>:
+            tessere, spese, lista della spesa e account restano nel dispositivo.
+          </p>
+        </section>
+
+        <section id="backup">
+          <h2><span class="num">7.</span>Backup ed esportazione</h2>
+          <p>
+            Puoi esportare in qualsiasi momento un file JSON con i tuoi dati e importarlo su un
+            altro dispositivo. Il file viene creato solo su tua richiesta e resta sotto il tuo
+            controllo.
+          </p>
+          <div class="note">
+            <p>
+              Il backup <strong>non è cifrato</strong>: chi lo riceve o lo trova può leggerne il
+              contenuto. Conservalo in un luogo sicuro e non condividerlo con persone di cui non ti
+              fidi.
+            </p>
+          </div>
+        </section>
+
+        <section id="conservazione">
+          <h2><span class="num">8.</span>Conservazione e cancellazione</h2>
+          <p>I dati restano sul dispositivo finché non li cancelli. In particolare:</p>
+          <ul>
+            <li>
+              <strong>«Esci dall'account»</strong> rimuove solo la sessione: account, tessere,
+              spese e lista della spesa restano salvati.
+            </li>
+            <li>
+              <strong>«Cancella tutti i dati»</strong> elimina tessere, spese e lista della spesa.
+            </li>
+            <li>
+              <strong>«Elimina account e dati»</strong> cancella l'account e tutti i dati
+              dell'app.
+            </li>
+            <li>
+              <strong>Disinstallare l'app</strong> cancella i dati locali, salvo eventuali backup
+              che hai esportato tu.
+            </li>
+          </ul>
+          <p>
+            Non essendoci server, non esistono copie remote da eliminare. I backup JSON già
+            esportati restano sotto il tuo controllo e vanno cancellati da te.
+          </p>
+        </section>
+
+        <section id="sicurezza">
+          <h2><span class="num">9.</span>Sicurezza</h2>
+          <p>
+            La password protegge l'accesso all'app ed è salvata solo come hash con salt. I dati sul
+            dispositivo <strong>non sono cifrati</strong>: chi ha accesso fisico al telefono
+            sbloccato potrebbe leggerli. Proteggi il dispositivo con un blocco schermo e non
+            condividere il backup con altri.
+          </p>
+          <p>
+            Se dimentichi la password puoi reimpostare l'account senza perdere tessere e spese. Non
+            è possibile recuperare i dati se disinstalli l'app o perdi il telefono senza un backup.
+          </p>
+        </section>
+
+        <section id="diritti">
+          <h2><span class="num">10.</span>I tuoi diritti</h2>
+          <p>
+            Puoi esercitare i diritti previsti dagli articoli 15-22 del Regolamento (UE) 2016/679
+            (GDPR): accesso, rettifica, cancellazione, limitazione, portabilità e opposizione al
+            trattamento.
+          </p>
+          <p>
+            Poiché i dati sono solo sul tuo dispositivo, puoi esercitarli direttamente dall'app:
+          </p>
+          <ul>
+            <li>consultare e modificare tessere, spese e lista della spesa;</li>
+            <li>esportare una copia dei dati in formato JSON (portabilità);</li>
+            <li>cancellare singoli dati, tutti i dati o l'intero account e revocare il consenso.</li>
+          </ul>
+          <p>
+            Se ritieni che il trattamento violi la normativa, puoi proporre reclamo al Garante per
+            la protezione dei dati personali (<a
+              href="https://www.garanteprivacy.it"
+              rel="noopener noreferrer"
+              target="_blank"
+              >garanteprivacy.it</a
+            >).
+          </p>
+        </section>
+
+        <section id="minori">
+          <h2><span class="num">11.</span>Minori</h2>
+          <p>
+            L'app non è destinata a bambini di età inferiore a 13 anni e non raccoglie
+            consapevolmente dati di minori. Non essendoci server né trasmissione di dati, i dati
+            eventualmente inseriti restano comunque solo sul dispositivo utilizzato.
+          </p>
+        </section>
+
+        <section id="modifiche">
+          <h2><span class="num">12.</span>Modifiche all'informativa</h2>
+          <p>
+            Se l'app cambia o la normativa lo richiede, questa informativa può essere aggiornata. La
+            versione corrente e la data di aggiornamento sono indicate in cima a questa pagina e
+            nell'app; le modifiche sostanziali vengono mostrate nell'app e richiedono una nuova
+            accettazione.
+          </p>
+        </section>
+
+        <section id="contatti">
+          <h2><span class="num">13.</span>Contatti</h2>
+          <!--
+            Vuoi un contatto diretto? Sostituisci il paragrafo qui sotto con, ad esempio:
+            <p>Email: <a href="mailto:tua-email@esempio.it">tua-email@esempio.it</a></p>
+            e aggiorna anche l'informativa mostrata nell'app (src/components/PrivacyNotice.jsx).
+          -->
+          <div class="contact">
+            <p>
+              Per domande su questa informativa, per esercitare i tuoi diritti o per segnalazioni
+              puoi usare i recapiti dello sviluppatore pubblicati nella scheda di
+              <strong>Tessere e Spese</strong> sul Google Play Store.
+            </p>
+          </div>
+        </section>
+
+        <footer>
+          <p>Tessere e Spese · <code>it.diegomarinelli.fedelta</code></p>
+          <p>Informativa privacy versione 2 · 2 novembre 2026</p>
+          <a class="top" href="#top">Torna all'inizio ↑</a>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>
